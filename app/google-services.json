@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "240015325906",
+    "firebase_url": "https://amader-doctor-3e546.firebaseio.com",
+    "project_id": "amader-doctor-3e546",
+    "storage_bucket": "amader-doctor-3e546.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240015325906:android:716d2d9bc9990b2e3d8b0b",
+        "android_client_info": {
+          "package_name": "com.h10_fams.amaderdoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240015325906-7noqvkqhak4b4a5r7u46vp0foeubrcol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxHAOQNRwfLBTQbJS2V3Qm8qrL8ERmmdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240015325906-7noqvkqhak4b4a5r7u46vp0foeubrcol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
