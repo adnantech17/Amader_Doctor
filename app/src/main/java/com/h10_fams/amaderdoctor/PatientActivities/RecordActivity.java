@@ -3,8 +3,12 @@ package com.h10_fams.amaderdoctor.PatientActivities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -19,22 +23,34 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.h10_fams.amaderdoctor.Models.Fever;
 import com.h10_fams.amaderdoctor.Models.Patient;
+import com.h10_fams.amaderdoctor.Models.Sensors;
 import com.h10_fams.amaderdoctor.R;
+import com.h10_fams.amaderdoctor.YourPatientsActivity;
 
 import java.util.HashMap;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class RecordActivity extends AppCompatActivity {
     private Button btnLipid, btnHormone, btnBloodCell;
-    private EditText etName, etAge, etDate, etHeight, etWeight, etTemp;
+    private EditText etName, etAge, etDate, etHeight, etWeight, etTemp, etCystolicPressure, etDiastolicPressure;
     Patient patient;
     Spinner spnSuger, spnCough;
     Fever fever = new Fever();
+    private int mInterval = 1000;
+    private Handler mHandler;
+    int index = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
         init();
+
+
+        mHandler = new Handler();
+        startRepeatingTask();
 
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("infos");
@@ -49,13 +65,13 @@ public class RecordActivity extends AppCompatActivity {
                 etWeight.setText(patient.getWeight());
                 etTemp.setText(fever.getTemperature());
 
-                if(fever.getCough().equals("Yes")) {
+                if (fever.getCough().equals("Yes")) {
                     spnCough.setSelection(0);
                 } else {
                     spnCough.setSelection(1);
                 }
 
-                if(fever.getSuger().equals("Yes")) {
+                if (fever.getSuger().equals("Yes")) {
                     spnSuger.setSelection(0);
                 } else {
                     spnSuger.setSelection(1);
@@ -95,7 +111,6 @@ public class RecordActivity extends AppCompatActivity {
         });
 
 
-
         btnLipid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,6 +134,36 @@ public class RecordActivity extends AppCompatActivity {
             }
         });
         uploadFeverInfo();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopRepeatingTask();
+    }
+
+    Runnable mStatusChecker = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                index++;
+                Log.d("LLLLL", Sensors.getDiastoleData(PatientDashboardActivity.type, index) + "");
+                etCystolicPressure.setText(Sensors.getSystoleData(PatientDashboardActivity.type, index) + "");
+                etDiastolicPressure.setText(Sensors.getDiastoleData(PatientDashboardActivity.type, index) + "");
+            } finally {
+                // 100% guarantee that this always happens, even if
+                // your update method throws an exception
+                mHandler.postDelayed(mStatusChecker, mInterval);
+            }
+        }
+    };
+
+    void startRepeatingTask() {
+        mStatusChecker.run();
+    }
+
+    void stopRepeatingTask() {
+        mHandler.removeCallbacks(mStatusChecker);
     }
 
     private void uploadFeverInfo() {
@@ -148,6 +193,8 @@ public class RecordActivity extends AppCompatActivity {
         etTemp = findViewById(R.id.etTemp);
         spnSuger = findViewById(R.id.spnSuger);
         spnCough = findViewById(R.id.spnCough);
+        etCystolicPressure = findViewById(R.id.etCystolicPressure);
+        etDiastolicPressure = findViewById(R.id.etDiastolicPressure);
 
     }
 }

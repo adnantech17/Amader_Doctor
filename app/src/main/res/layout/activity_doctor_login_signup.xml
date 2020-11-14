@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".DoctorLoginSignupActivity">
 
     <ImageView
@@ -17,6 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="Email"
+        android:textColor="#000000"
+        android:text="a@gmail.com"
         android:id="@+id/etEmail"
         android:textSize="25sp"
         android:layout_below="@id/imageView"
@@ -26,6 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="Password"
+        android:text="123456"
+        android:textColor="#000000"
         android:inputType="textPassword"
         android:id="@+id/etPassword"
         android:textSize="25sp"
@@ -53,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
+        android:textColor="#000000"
         android:text="Don't have an account"
         android:layout_below="@id/btnLogin"
         android:id="@+id/tvLinkText"

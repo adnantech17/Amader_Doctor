@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".PatientActivities.PatientDashboardActivity">
 
     <FrameLayout
@@ -23,9 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bottomNavigation"
-            app:itemIconTint="@color/black"
+            app:itemIconTint="@color/white"
             app:labelVisibilityMode="unlabeled"
-            android:background="?android:attr/windowBackground"
+            android:background="#FFFFFF"
             app:menu="@menu/bottom_menu"/>
 
 

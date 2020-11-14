@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.content.pm.ConfigurationInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -21,17 +22,32 @@ import com.h10_fams.amaderdoctor.PatientFragments.HomeFragment;
 import com.h10_fams.amaderdoctor.PatientFragments.ProfileFragment;
 import com.h10_fams.amaderdoctor.R;
 
+import java.util.Random;
+
 public class PatientDashboardActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private Fragment selectorFragment;
     public static Patient patient;
+    public static int type = 1;
+    public static String condition = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_dashboard);
+
+        if(type==1)
+            condition = "mild";
+        else if(type==2)
+            condition = "critical";
+        else
+            condition = "dead";
+
+
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("condition").setValue(condition);
 
         updatePatient();
 
@@ -60,6 +76,7 @@ public class PatientDashboardActivity extends AppCompatActivity {
         });
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new HomeFragment()).commit();
     }
+
 
     private void updatePatient() {
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();

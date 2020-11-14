@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".PatientFragments.EmergencyFragment"
     android:layout_margin="20dp">
 
@@ -47,6 +48,7 @@
                         android:layout_height="wrap_content"
                         android:text="Pandemic News"
                         android:layout_below="@id/imgNews"
+                        android:textColor="#000000"
                         android:layout_centerHorizontal="true"/>
 
                 </RelativeLayout>
@@ -75,6 +77,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000000"
                         android:text="Health Tips"
                         android:layout_below="@id/imgTips"
                         android:layout_centerHorizontal="true"/>
@@ -114,6 +117,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000000"
                         android:text="Virtual Appointment"
                         android:layout_below="@id/imgAppointment"
                         android:layout_centerHorizontal="true"/>

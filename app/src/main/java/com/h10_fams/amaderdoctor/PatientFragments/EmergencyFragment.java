@@ -1,5 +1,6 @@
 package com.h10_fams.amaderdoctor.PatientFragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.h10_fams.amaderdoctor.PatientActivities.NewsActivity;
+import com.h10_fams.amaderdoctor.PatientActivities.TipsActivity;
 import com.h10_fams.amaderdoctor.R;
 
 public class EmergencyFragment extends Fragment {
@@ -35,6 +38,8 @@ public class EmergencyFragment extends Fragment {
         cvNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getContext(), NewsActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -42,6 +47,8 @@ public class EmergencyFragment extends Fragment {
         cvTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getContext(), TipsActivity.class);
+                startActivity(intent);
 
             }
         });

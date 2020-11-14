@@ -9,4 +9,9 @@
         <item>Yes</item>
         <item>No</item>
     </string-array>
+    <string-array name="conditions">
+        <item>mild</item>
+        <item>critical</item>
+        <item>dead</item>
+    </string-array>
 </resources>
