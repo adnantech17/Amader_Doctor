@@ -1,4 +1,4 @@
-package com.h10_fams.amaderdoctor;
+package com.h10_fams.amaderdoctor.PatientActivities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,8 +16,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.h10_fams.amaderdoctor.R;
 
 public class PatientLoginSignupActivity extends AppCompatActivity {
 
@@ -70,7 +74,28 @@ public class PatientLoginSignupActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 progressDialog.dismiss();
-                                signIn();
+
+                                String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("infos");
+                                ref.addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if(snapshot.exists()) {
+                                            signIn();
+                                        }
+
+                                        else {
+                                            Intent intent = new Intent(PatientLoginSignupActivity.this, PatientRegisterInfoActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
                             }
 
                             else {
@@ -103,7 +128,10 @@ public class PatientLoginSignupActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 progressDialog.dismiss();
                                 Toast.makeText(PatientLoginSignupActivity.this, "Register Success", Toast.LENGTH_SHORT).show();
-                                signIn();
+                                Intent intent = new Intent(PatientLoginSignupActivity.this, PatientRegisterInfoActivity.class);
+                                startActivity(intent);
+                                finish();
+
                             }
                             else {
                                 progressDialog.dismiss();

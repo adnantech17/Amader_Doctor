@@ -1,4 +1,4 @@
-package com.h10_fams.amaderdoctor.PatientFragments;
+package com.h10_fams.amaderdoctor.DoctorFragments;
 
 import android.os.Bundle;
 
@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,10 +20,11 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.h10_fams.amaderdoctor.DoctorDashboardActivity;
 import com.h10_fams.amaderdoctor.PatientActivities.PatientDashboardActivity;
 import com.h10_fams.amaderdoctor.R;
 
-public class ProfileFragment extends Fragment {
+public class DoctorProfileFragment extends Fragment {
 
     EditText etEmail, etPass, etNewPass, etName;
     Button btnLoc, btnSubmit;
@@ -34,7 +34,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_doctor_profile, container, false);
 
         etEmail = view.findViewById(R.id.etEmail);
         etPass = view.findViewById(R.id.etPass);
@@ -43,7 +43,7 @@ public class ProfileFragment extends Fragment {
         btnSubmit = view.findViewById(R.id.btnSubmit);
         btnLoc = view.findViewById(R.id.btnLoc);
 
-        etName.setText(PatientDashboardActivity.patient.getName());
+        etName.setText(DoctorDashboardActivity.doctor.getName());
         etEmail.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
         btnSubmit.setEnabled(false);

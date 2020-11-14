@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"  android:layout_width="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:cardCornerRadius="5dp"
-                android:id="@+id/cvRecord">
+                android:id="@+id/cvPatients">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -32,16 +32,16 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/records"
-                        android:id="@+id/imgRecords"
+                        android:src="@drawable/patients"
+                        android:id="@+id/imgPatients"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"/>
                     <TextView
                         android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Your Current Records"
-                        android:layout_below="@id/imgRecords"
+                        android:text="Your Patients"
+                        android:layout_below="@id/imgPatients"
                         android:layout_centerHorizontal="true"/>
 
                 </RelativeLayout>
@@ -53,7 +53,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:cardCornerRadius="5dp"
-                android:id="@+id/cvHospitals">
+                android:id="@+id/cvAppointment">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,16 +62,16 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/nearby_hospitals"
-                        android:id="@+id/imgNearby"
+                        android:src="@drawable/appointment"
+                        android:id="@+id/imgAppointment"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"/>
                     <TextView
                         android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nearby Hospitals"
-                        android:layout_below="@id/imgNearby"
+                        android:text="Appointments"
+                        android:layout_below="@id/imgAppointment"
                         android:layout_centerHorizontal="true"/>
 
                 </RelativeLayout>
@@ -92,7 +92,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:cardCornerRadius="5dp"
-                android:id="@+id/cvHistory">
+                android:id="@+id/cvRequest">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -101,16 +101,46 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/appointment"
-                        android:id="@+id/imgHistory"
+                        android:src="@drawable/request"
+                        android:id="@+id/imgRequest"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"/>
                     <TextView
                         android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="My Doctor"
-                        android:layout_below="@id/imgHistory"
+                        android:text="Patient Request"
+                        android:layout_below="@id/imgRequest"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp"
+                android:id="@+id/cvNotification">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_notification"
+                        android:id="@+id/imgNotification"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"/>
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Notification"
+                        android:layout_below="@id/imgNotification"
                         android:layout_centerHorizontal="true"/>
 
                 </RelativeLayout>

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.h10_fams.amaderdoctor.PatientActivities.PatientLoginSignupActivity;
+
 public class HomeActivity extends AppCompatActivity {
     private Button btnDoctor;
     private Button btnPatient;

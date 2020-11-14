@@ -9,14 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AmaderDoctor">
-        <activity android:name=".HormoneActivity"></activity>
-        <activity android:name=".BloodCountActivity" />
-        <activity android:name=".LipidActivity" />
-        <activity android:name=".RecordActivity" />
+        <activity android:name=".PatientActivities.MyDoctorActivity"></activity>
+        <activity android:name=".PatientActivities.DoctorListActivity" />
+        <activity android:name=".YourRequestActivity" />
+        <activity android:name=".YourPatientsActivity" />
+        <activity android:name=".DoctorRegistrationInfoActivity" />
+        <activity android:name=".PatientActivities.PatientRegisterInfoActivity" />
+        <activity android:name=".PatientActivities.HormoneActivity" />
+        <activity android:name=".PatientActivities.BloodCountActivity" />
+        <activity android:name=".PatientActivities.LipidActivity" />
+        <activity android:name=".PatientActivities.RecordActivity" />
         <activity android:name=".DoctorDashboardActivity" />
-        <activity android:name=".PatientDashboardActivity" />
+        <activity android:name=".PatientActivities.PatientDashboardActivity" />
         <activity android:name=".DoctorLoginSignupActivity" />
-        <activity android:name=".PatientLoginSignupActivity" />
+        <activity android:name=".PatientActivities.PatientLoginSignupActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>

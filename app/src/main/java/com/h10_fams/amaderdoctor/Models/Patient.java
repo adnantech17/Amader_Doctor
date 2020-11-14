@@ -1,7 +1,53 @@
 package com.h10_fams.amaderdoctor.Models;
 
 public class Patient {
-    private String name, age, dob, phone, email;
+    private String name, age, dob, phone, gender, height, weight, uid;
+
+    public Patient() {
+
+    }
+    public Patient(String name, String age, String dob, String phone, String gender, String height, String weight, String uid) {
+        this.name = name;
+        this.age = age;
+        this.dob = dob;
+        this.phone = phone;
+        this.gender = gender;
+        this.height = height;
+        this.weight = weight;
+        this.uid = uid;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
 
     public String getName() {
         return name;
@@ -35,11 +81,4 @@ public class Patient {
         this.phone = phone;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

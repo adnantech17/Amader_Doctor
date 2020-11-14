@@ -5,101 +5,196 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RecordActivity">
+    tools:context=".PatientActivities.RecordActivity">
     <LinearLayout
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:orientation="horizontal"
-        android:layout_marginVertical="5dp"
-        android:weightSum="2">
+        android:weightSum="10">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="Name: Adnan"
-            android:layout_weight="1"
-            android:id="@+id/tvName"
-            android:layout_marginHorizontal="10dp"/>
-        <TextView
+            android:text="Name:"
+            android:layout_weight="7"/>
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="Age: 20"
-            android:id="@+id/tvAge"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="10dp"/>
+            android:layout_weight="3"
+            android:text="Adnan"
+            android:enabled="false"
+            android:id="@+id/etName"/>
+
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:layout_marginVertical="5dp"
-        android:id="@+id/tvDob"
-        android:text="Date of Birth: 30/07/2000"
-        android:layout_marginHorizontal="10dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:orientation="horizontal"
-        android:layout_marginVertical="5dp"
-        android:weightSum="2">
+        android:weightSum="10">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:id="@+id/tvHeight"
-            android:text="Height: 5.6ft"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="10dp"/>
-        <TextView
+            android:text="Age:"
+            android:layout_weight="7"/>
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:id="@+id/tvWeight"
-            android:layout_weight="1"
-            android:text="Weight: 50kg"
-            android:layout_marginHorizontal="10dp"/>
+            android:layout_weight="3"
+            android:text="Adnan"
+            android:enabled="false"
+            android:id="@+id/etAge"/>
+
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:id="@+id/tvTemp"
-        android:layout_marginVertical="5dp"
-        android:text="Temperature: 98.4"
-        android:layout_marginHorizontal="10dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:id="@+id/tvSuger"
-        android:layout_marginVertical="5dp"
-        android:text="Sugar: Adnan"
-        android:layout_marginHorizontal="10dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="20dp"
         android:orientation="horizontal"
-        android:weightSum="2">
+        android:weightSum="10">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:id="@+id/tvCold"
-            android:text="Cold: No"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="10dp"/>
+            android:text="Height:"
+            android:layout_weight="7"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Adnan"
+            android:enabled="false"
+            android:id="@+id/etHeight"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:id="@+id/tvCough"
-            android:layout_weight="1"
-            android:text="Cough: No"
-            android:layout_marginHorizontal="10dp"/>
+            android:text="Name:"
+            android:layout_weight="7"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Adnan"
+            android:enabled="false"
+            android:id="@+id/etWeight"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sugar:"
+            android:layout_weight="7"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/spnSuger"
+            android:layout_weight="3"
+            android:layout_marginTop="16dp"
+            android:contextClickable="true"
+            android:entries="@array/booleanVals"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cough:"
+            android:layout_weight="7"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/spnCough"
+            android:layout_weight="3"
+            android:layout_marginTop="16dp"
+            android:contextClickable="true"
+            android:entries="@array/booleanVals"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date of Birth:"
+            android:layout_weight="7"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Adnan"
+            android:enabled="false"
+            android:id="@+id/etDate"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:orientation="horizontal"
+    android:weightSum="10">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Temperature:"
+        android:layout_weight="7"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:text="Adnan"
+        android:enabled="false"
+        android:id="@+id/etTemp"/>
+
     </LinearLayout>
 
     <Button
