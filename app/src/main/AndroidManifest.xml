@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AmaderDoctor">
-        <activity android:name=".DoctorDashboardActivity"></activity>
+        <activity android:name=".HormoneActivity"></activity>
+        <activity android:name=".BloodCountActivity" />
+        <activity android:name=".LipidActivity" />
+        <activity android:name=".RecordActivity" />
+        <activity android:name=".DoctorDashboardActivity" />
         <activity android:name=".PatientDashboardActivity" />
         <activity android:name=".DoctorLoginSignupActivity" />
         <activity android:name=".PatientLoginSignupActivity" />

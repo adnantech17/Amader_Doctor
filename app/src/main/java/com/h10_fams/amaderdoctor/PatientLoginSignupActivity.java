@@ -37,9 +37,17 @@ public class PatientLoginSignupActivity extends AppCompatActivity {
         tvLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login.setVisibility(View.INVISIBLE);
-                register.setVisibility(View.VISIBLE);
-                tvLink.setVisibility(View.INVISIBLE);
+                if(tvLink.getText().toString().equals("Don't have an account")){
+                    login.setVisibility(View.INVISIBLE);
+                    register.setVisibility(View.VISIBLE);
+                    tvLink.setText("Already have an account");
+                }
+
+                else {
+                    login.setVisibility(View.VISIBLE);
+                    register.setVisibility(View.INVISIBLE);
+                    tvLink.setText("Don't have an account");
+                }
             }
         });
 
@@ -63,6 +71,11 @@ public class PatientLoginSignupActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 progressDialog.dismiss();
                                 signIn();
+                            }
+
+                            else {
+                                progressDialog.dismiss();
+                                Toast.makeText(PatientLoginSignupActivity.this, "Sorry, Email or Password doesn't match.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -92,6 +105,10 @@ public class PatientLoginSignupActivity extends AppCompatActivity {
                                 Toast.makeText(PatientLoginSignupActivity.this, "Register Success", Toast.LENGTH_SHORT).show();
                                 signIn();
                             }
+                            else {
+                                progressDialog.dismiss();
+                                Toast.makeText(PatientLoginSignupActivity.this, "Sorry, Already have an account with this email.", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                 }
@@ -101,9 +118,6 @@ public class PatientLoginSignupActivity extends AppCompatActivity {
 
     private void signIn() {
         Toast.makeText(PatientLoginSignupActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
-
-        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        patientRef.child(userID).setValue(true);
 
         Intent intent = new Intent(PatientLoginSignupActivity.this, PatientDashboardActivity.class);
         startActivity(intent);
@@ -118,6 +132,6 @@ public class PatientLoginSignupActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
 
-        patientRef = FirebaseDatabase.getInstance().getReference().child("users").child("customers");
+        patientRef = FirebaseDatabase.getInstance().getReference().child("users").child("patients");
     }
 }
