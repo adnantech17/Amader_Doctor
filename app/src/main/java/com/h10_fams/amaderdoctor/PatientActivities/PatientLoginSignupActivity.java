@@ -45,12 +45,16 @@ public class PatientLoginSignupActivity extends AppCompatActivity {
                     login.setVisibility(View.INVISIBLE);
                     register.setVisibility(View.VISIBLE);
                     tvLink.setText("Already have an account");
+                    etEmail.setText("");
+                    etPassword.setText("");
                 }
 
                 else {
                     login.setVisibility(View.VISIBLE);
                     register.setVisibility(View.INVISIBLE);
                     tvLink.setText("Don't have an account");
+                    etEmail.setText("");
+                    etPassword.setText("");
                 }
             }
         });

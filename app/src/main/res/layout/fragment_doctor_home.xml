@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#E1E1E1"
     xmlns:android="http://schemas.android.com/apk/res/android"  android:layout_width="match_parent">
     <LinearLayout
         xmlns:tools="http://schemas.android.com/tools"
@@ -25,6 +25,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:cardCornerRadius="5dp"
+                android:background="#E1E1E1"
                 android:id="@+id/cvPatients">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -51,37 +52,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:cardCornerRadius="5dp"
-                android:id="@+id/cvAppointment">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="10"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/appointment"
-                        android:id="@+id/imgAppointment"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"/>
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Appointments"
-                        android:textColor="#000000"
-                        android:layout_below="@id/imgAppointment"
-                        android:layout_centerHorizontal="true"/>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
         </LinearLayout>
 
         <LinearLayout
@@ -96,6 +66,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:cardCornerRadius="5dp"
+                android:background="#E1E1E1"
                 android:id="@+id/cvRequest">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -122,36 +93,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:cardCornerRadius="5dp"
-                android:id="@+id/cvNotification">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="10"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_notification"
-                        android:id="@+id/imgNotification"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"/>
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="wrap_content"
-                        android:textColor="#000000"
-                        android:layout_height="wrap_content"
-                        android:text="Notification"
-                        android:layout_below="@id/imgNotification"
-                        android:layout_centerHorizontal="true"/>
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

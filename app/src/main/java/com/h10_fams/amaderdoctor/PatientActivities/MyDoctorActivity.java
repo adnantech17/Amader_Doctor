@@ -104,14 +104,14 @@ public class MyDoctorActivity extends AppCompatActivity {
                     PatientDashboardActivity.type = 3;
                     HashMap<String, String> hashMap = new HashMap<>();
                     hashMap.put("name", PatientDashboardActivity.patient.getName() + " is Dead!");
-                    hashMap.put("time", df.toString());
+                    hashMap.put("time", formattedDate);
                     ref.setValue(hashMap);
                 }
                 else if(spnCondition.getSelectedItem().toString().equals("critical")) {
                     PatientDashboardActivity.type = 2;
                     HashMap<String, String> hashMap = new HashMap<>();
                     hashMap.put("name", PatientDashboardActivity.patient.getName() + " is in Critical Condition");
-                    hashMap.put("time", df.toString());
+                    hashMap.put("time", formattedDate);
                     ref.setValue(hashMap);
                 }
             }

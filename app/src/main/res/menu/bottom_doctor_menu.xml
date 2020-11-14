@@ -5,7 +5,7 @@
         android:title=""/>
 
     <item android:id="@+id/nav_emergency"
-        android:icon="@drawable/ic_emergency"
+        android:icon="@drawable/ic_notification"
         android:title=""/>
 
     <item android:id="@+id/nav_profile"

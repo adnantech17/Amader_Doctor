@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF"
+    android:background="#E1E1E1"
     tools:context=".PatientActivities.PatientRegisterInfoActivity" >
 
 
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:backgroundTint="#FAF9F9"
+        android:textColorHint="#000000"
         android:textColor="#000000"
         android:ems="10"
         android:hint="Enter Name"
@@ -51,6 +51,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginHorizontal="20dp"
         android:id="@+id/tvAgeWarning"
+        android:textColorHint="#000000"
         android:textColor="#000000"
         android:visibility="gone"/>
 
@@ -62,6 +63,7 @@
         android:layout_marginHorizontal="20dp"
         android:ems="10"
         android:hint="Enter Age"
+        android:textColorHint="#000000"
         android:textColor="#000000"
         android:inputType="numberDecimal"/>
 
@@ -71,6 +73,7 @@
         android:text="You must enter Speciality"
         android:layout_marginTop="24dp"
         android:layout_marginHorizontal="20dp"
+        android:textColorHint="#000000"
         android:textColor="#000000"
         android:id="@+id/tvSpecialityWarning"
         android:visibility="gone"/>
@@ -83,6 +86,7 @@
         android:layout_marginHorizontal="20dp"
         android:ems="10"
         android:hint="Enter speciality"
+        android:textColorHint="#000000"
         android:textColor="#000000"
         android:inputType="text"/>
 
@@ -99,6 +103,7 @@
             android:layout_marginHorizontal="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#000000"
             android:textColor="#000000"
             android:text="Gender:"
             android:layout_weight="75"/>
@@ -109,6 +114,8 @@
             android:layout_height="30dp"
             android:id="@+id/spnGender"
             android:layout_weight="25"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
             android:layout_marginTop="16dp"
             android:contextClickable="true"
             android:entries="@array/genders"
@@ -125,6 +132,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginHorizontal="20dp"
         android:id="@+id/tvPhoneNumberWarning"
+        android:textColorHint="#000000"
         android:textColor="#000000"
         android:visibility="gone"/>
 
@@ -162,6 +170,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Date of Birth:"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
             android:layout_weight="25"/>
 
         <EditText
@@ -171,6 +181,8 @@
             android:layout_weight="25"
             android:hint="DD"
             android:id="@+id/etDD"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
             android:gravity="center"
             android:inputType="number"/>
         <EditText
@@ -179,6 +191,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="25"
             android:hint="MM"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
             android:id="@+id/etMM"
             android:gravity="center"
             android:inputType="number"/>
@@ -188,6 +202,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="25"
             android:hint="YY"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
             android:id="@+id/etYY"
             android:gravity="center"
             android:inputType="number"/>
